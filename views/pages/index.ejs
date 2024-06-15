@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/header') %>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Book Notes</a>
+  </nav>
+  <div class="container">
+    <h1 class="mt-4">Book Notes</h1>
+    <div id="book-list"></div>
+    <button class="btn btn-primary mt-4" data-toggle="modal" data-target="#bookModal">Add New Book</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookModalLabel">Add New Book</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="book-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" class="form-control" id="author" name="author" required>
+            </div>
+            <div class="form-group">
+              <label for="rating">Rating</label>
+              <input type="number" class="form-control" id="rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+              <label for="date_read">Date Read</label>
+              <input type="date" class="form-control" id="date_read" name="date_read" required>
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea class="form-control" id="notes" name="notes" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="cover_image_url">Cover Image URL</label>
+              <input type="url" class="form-control" id="cover_image_url" name="cover_image_url" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Book</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../partials/footer') %>
+</body>
+</html>
+
